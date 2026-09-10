@@ -7,7 +7,16 @@ import os
 import requests
 import streamlit as st
 
-BACKEND_URL = os.getenv("BACKEND_URL", "http://localhost:8000/ask")
+def _get_backend_url() -> str:
+    # Local runs read from .env (via os.getenv). Streamlit Community Cloud
+    # runs read from the app's Secrets instead, exposed through st.secrets.
+    try:
+        return st.secrets["BACKEND_URL"]
+    except Exception:
+        return os.getenv("BACKEND_URL", "http://localhost:8000")
+
+
+BACKEND_URL = _get_backend_url()
 
 st.set_page_config(page_title="RAG Teaching Chat", page_icon="📚")
 st.title("📚 RAG Teaching Chat")
@@ -33,7 +42,7 @@ if question:
     with st.chat_message("assistant"):
         with st.spinner("Thinking..."):
             try:
-                response = requests.post(BACKEND_URL, json={"question": question}, timeout=60)
+                response = requests.post(f"{BACKEND_URL}/ask", json={"question": question}, timeout=60)
                 response.raise_for_status()
                 data = response.json()
                 answer = data.get("answer", "")
