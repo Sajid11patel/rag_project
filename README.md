@@ -13,8 +13,8 @@ A modular, interview-ready **Retrieval-Augmented Generation (RAG)** system where
 
 ## 🌟 Live Demo
 
-- **UI:** *(add your Streamlit Community Cloud link here after deploying)*
-- **API docs:** *(add your Render backend URL + `/docs` here)*
+- **UI:** *(https://ragproject-9thmyrnchffpb77oa2wpss.streamlit.app/)*
+- **API docs:** *(https://rag-backend-oops.onrender.com)*
 
 ---
 
