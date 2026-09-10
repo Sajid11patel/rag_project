@@ -11,7 +11,7 @@ from langchain_chroma import Chroma
 
 
 def _get_embeddings():
-    model_name = "BAAI/bge-large-en-v1.5"
+    model_name = "BAAI/bge-small-en-v1.5"
     
     return HuggingFaceEmbeddings(
         model_name=model_name,
