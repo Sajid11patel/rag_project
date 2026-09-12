@@ -1,0 +1,42 @@
+[
+  {
+    "question": "What is the primary difference in focus between procedural programming and object-oriented programming?",
+    "ground_truth": "Procedural programming focuses on functions, sequences of steps, and passing data around to functions that operate on it. In contrast, object-oriented programming focuses on creating objects that bundle data (attributes) and the functions (methods) that operate on that data together."
+  },
+  {
+    "question": "What role does the 'self' parameter play in Python instance methods?",
+    "ground_truth": "'self' is a reference to the specific instance (object) of the class. Python automatically passes the object when calling a method on it, which allows access to that instance's attributes and methods and distinguishes them from local variables."
+  },
+  {
+    "question": "What is the purpose of the __init__ method in a Python class?",
+    "ground_truth": "The __init__ method serves as the constructor in Python. It is a special method automatically called immediately after an object is instantiated, and its primary purpose is to initialize the attributes and initial state of the newly created object."
+  },
+  {
+    "question": "Why is the __del__ destructor not recommended as a reliable tool for closing files and managing critical resources?",
+    "ground_truth": "__del__ is not guaranteed to execute immediately when an object loses its reference because Python's garbage collector destroys objects at unpredictable times. Context managers (the 'with' statement) are preferred because they guarantee deterministic cleanup."
+  },
+  {
+    "question": "What relationship does inheritance represent, and what are its main advantages?",
+    "ground_truth": "Inheritance represents an 'is-a' relationship between a base class and a derived class (e.g., a Car 'is a' Vehicle). Its main advantages are code reusability without rewriting common logic, extensibility of base classes, and enabling polymorphism."
+  },
+  {
+    "question": "What is the purpose of the super() function in a derived class's __init__ method?",
+    "ground_truth": "The super() function dynamically delegates the call to the parent class's constructor, ensuring that inherited attributes from the base class are properly initialized before adding child-specific attributes."
+  },
+  {
+    "question": "How does Python resolve method calls in multiple inheritance when a diamond problem occurs?",
+    "ground_truth": "Python uses the C3 linearization algorithm to determine the Method Resolution Order (MRO), which specifies the exact, predictable sequence in which parent classes and ancestors are searched for methods."
+  },
+  {
+    "question": "How is operator overloading implemented under the hood in Python when evaluating expressions like v1 + v2?",
+    "ground_truth": "Operator overloading is implemented via special dunder (magic) methods. When the '+' operator is applied to two objects (v1 + v2), Python internally translates the expression to v1.__add__(v2)."
+  },
+  {
+    "question": "How does Python enforce private attributes prefixed with double underscores (e.g., __attribute)?",
+    "ground_truth": "Python enforces double-underscore private attributes through name mangling, where the attribute is internally rewritten as _ClassName__attribute to avoid naming collisions in inheritance, rather than providing strict compiler-level access blocking."
+  },
+  {
+    "question": "Why is the @property decorator preferred over explicit getter and setter methods in Python?",
+    "ground_truth": "The @property decorator provides a clean, Pythonic syntax that allows attributes to be accessed and modified like normal attributes while seamlessly running internal validation or logging logic behind the scenes."
+  }
+]
